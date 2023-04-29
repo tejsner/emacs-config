@@ -1,0 +1,147 @@
+#+TITLE: Emacs config
+#+PROPERTY: header-args:elisp :tangle ~/.emacs.d/init.el
+
+* Package management
+
+#+begin_src elisp :tangle ~/.emacs.d/early_init.el
+;; recommended by straight.el
+(setq package-enable-at-startup nil)
+#+end_src
+
+#+begin_src elisp
+;; straight.el bootstrap
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+;; install use-package macro and integrate with straight
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+#+end_src
+
+* ui
+
+#+begin_src elisp
+;; ui
+(tool-bar-mode -1)
+(use-package doom-themes)
+(load-theme 'doom-zenburn t)
+(setq default-frame-alist '((width . 160) (height . 55)))
+(global-display-line-numbers-mode 1)
+#+end_src
+
+* editor
+
+#+begin_src elisp
+;; spaces over tabs
+(setq-default inden-tabs-mode nil)
+
+;; kill current line with C-w if region is not active
+(use-package whole-line-or-region)
+(whole-line-or-region-global-mode)
+
+;; tree-sitter
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+#+end_src
+
+* completion
+
+#+begin_src elisp
+;; completion
+(use-package vertico)
+(use-package marginalia)
+(vertico-mode 1)
+(marginalia-mode)
+#+end_src
+
+* org
+
+#+begin_src elisp
+;; org
+(use-package org)
+
+;; org-babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)))
+
+;; structure templates and source code blocks
+(require 'org-tempo)
+(setq org-edit-src-content-indentation 0)
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("el" . "src elisp"))
+#+end_src
+
+* keymaps
+
+#+begin_src elisp
+;; keymaps
+(global-set-key [remap list-buffers] 'ibuffer)
+(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-i") 'imenu)
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
+(global-set-key (kbd "M-#") 'dictionary-lookup-definition)
+#+end_src
+
+* programming languages
+
+#+begin_src elisp
+;;; programming languages
+(use-package markdown-mode)
+#+end_src
+
+* tools
+** chatgpt
+
+#+begin_src elisp
+;; chatgpt
+(use-package gptel
+  :init
+  (setq-default gptel-default-mode 'org-mode))
+#+end_src
+
+** passwords
+
+#+begin_src elisp
+;; enable auth-source and instruct it to use pass
+(require 'auth-source-pass)
+(setq auth-sources '(password-store))
+(auth-source-pass-enable)
+
+;; major mode to handle pass
+(use-package pass)
+#+end_src
+
+** dictionary
+
+#+begin_src elisp
+;; M-x dictionary-search searches using dict.org
+(setq dictionary-server "dict.org")
+#+end_src
+
+** dired
+
+#+begin_src elisp
+;; add dired-features
+(require 'dired-x)
+#+end_src
+
+** magit
+
+#+begin_src elisp
+(use-package magit)
+#+end_src
+
