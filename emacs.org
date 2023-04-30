@@ -37,6 +37,7 @@
 (load-theme 'doom-zenburn t)
 (setq default-frame-alist '((width . 160) (height . 55)))
 (global-display-line-numbers-mode 1)
+(setq visible-bell t)
 #+end_src
 
 * editor
@@ -112,6 +113,7 @@
 (use-package gptel
   :init
   (setq-default gptel-default-mode 'org-mode))
+(add-hook 'gptel-mode-hook 'visual-line-mode)
 #+end_src
 
 ** passwords
