@@ -64,6 +64,10 @@
 
 ;; always answer yes/no prompts with just y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; add rainbow-delimters
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
 #+end_src
 
 * completion
