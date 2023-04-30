@@ -59,6 +59,9 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; always answer yes/no prompts with just y or n
+(defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
 * completion
