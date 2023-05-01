@@ -1,7 +1,7 @@
 #+TITLE: Emacs config
 #+PROPERTY: header-args:elisp :tangle ~/.emacs.d/init.el
 
-* Package management
+* package management
 
 #+begin_src elisp :tangle ~/.emacs.d/early_init.el
 ;; recommended by straight.el

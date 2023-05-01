@@ -26,7 +26,7 @@ Run the following command to encrypt and archive the password store.
 tar -cz .password-store | gpg --sign --encrypt -r [key] > password-store-backup.tar.gz.gpg
 ```
 
-Where `[key]` is your gpg key Restore the directory:
+Where `[key]` is your gpg key. Restore the directory:
 
 ```
 gpg --decrypt < password-store-backup.tar.gz.gpg | tar -xz 
