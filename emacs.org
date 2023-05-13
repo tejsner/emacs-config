@@ -136,9 +136,6 @@
 (require 'auth-source-pass)
 (setq auth-sources '(password-store))
 (auth-source-pass-enable)
-
-;; major mode to handle pass
-(use-package pass)
 #+end_src
 
 ** dictionary
