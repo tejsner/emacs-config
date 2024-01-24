@@ -106,9 +106,27 @@
 ;; export to rst
 (use-package ox-rst :ensure t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;   Holidays
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defvar holiday-denmark-holidays
+  '((holiday-fixed 1 1 "Nytårsdag")
+    (holiday-easter-etc -3 "Skærtorsdag")
+    (holiday-easter-etc -2 "Langfredag")
+    (holiday-easter-etc 0 "Påskedag")
+    (holiday-easter-etc 1 "Anden påskedag")
+    (holiday-easter-etc 26 "Stor bededag")
+    (holiday-easter-etc 39 "Kristi himmelfartsdag")
+    (holiday-easter-etc 49 "Pinsedag")
+    (holiday-easter-etc 50 "Anden Pinsedag")
+    (holiday-fixed 12 24 "Juleaften")
+    (holiday-fixed 12 25 "Juledag")
+    (holiday-fixed 12 26 "Anden juledag")
+    (holiday-fixed 12 31 "Nytårsaften"))
+  "Danish holidays.")
 
-
-
-
+(setq calendar-holidays holiday-denmark-holidays)
 
