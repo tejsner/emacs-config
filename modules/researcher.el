@@ -20,6 +20,7 @@
   (org-mode . citar-capf-setup)
   :bind (("C-c b i" . citar-insert-citation)
          ("C-c b f" . citar-open)
+         ("C-c b o" . citar-open-entry)
          ("C-c b r" . citar-insert-reference))
   :custom
   ;; Allows you to customize what citar-open does
