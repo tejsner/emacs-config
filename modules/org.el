@@ -52,6 +52,8 @@
    '((emacs-lisp . t)
      (python . t)
      (C . t)))
+     (sqlite . t)
+     (shell . t)))
 
   ;; settings forsource code blocks
   (setq org-edit-src-content-indentation 0)
