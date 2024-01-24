@@ -55,7 +55,8 @@
         ("C-c n d" . denote-date)
         ("C-c n z" . denote-signature)
         ("C-c n s" . denote-subdirectory)
-        ("C-c n t" . denote-template)))
+        ("C-c n t" . denote-template)
+        ("C-c n l" . denote-link)))
 
 
 (use-package citar-denote
