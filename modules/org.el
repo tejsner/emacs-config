@@ -62,7 +62,7 @@
   ;; Instead of just two states (TODO, DONE) we set up a few different states
   ;; that a task can be in.
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "STARTED(s)" "DONE(d)")))
+        '((sequence "TODO(t)" "STARTED(s)" "DONE(d!)")))
   (setq org-log-done t)
 
   ;; Refile configuration
