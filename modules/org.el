@@ -94,8 +94,17 @@
         (("s-Y" . org-download-screenshot)
          ("s-y" . org-download-yank))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;   Export engines
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; org-reveal
+(use-package ox-reveal :ensure t)
 
+;; export to rst
+(use-package ox-rst :ensure t)
 
 
 
