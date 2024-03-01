@@ -33,8 +33,8 @@
          (org-mode . flyspell-mode))    ; spell checking!
 
   :bind (:map global-map
-              ("C-c c" . org-capture)
-              ("C-c a" . org-agenda))
+              ("C-t c" . org-capture)
+              ("C-t a" . org-agenda))
 
   :config
   (require 'oc-csl)                     ; CSL citation support

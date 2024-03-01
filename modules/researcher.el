@@ -18,10 +18,10 @@
   :ensure t
   :hook
   (org-mode . citar-capf-setup)
-  :bind (("C-c b i" . citar-insert-citation)
-         ("C-c b f" . citar-open)
-         ("C-c b o" . citar-open-entry)
-         ("C-c b r" . citar-insert-reference))
+  :bind (("C-t b i" . citar-insert-citation)
+         ("C-t b f" . citar-open)
+         ("C-t b o" . citar-open-entry)
+         ("C-t b r" . citar-insert-reference))
   :custom
   ;; Allows you to customize what citar-open does
   (citar-file-open-functions '(("html" . citar-file-open-external)
@@ -47,16 +47,16 @@
   :ensure t
   :bind 
   (:map global-map
-        ("C-c n n" . denote)
-        ("C-c n f" . denote-open-or-create)
+        ("C-t n n" . denote)
+        ("C-t n f" . denote-open-or-create)
         ;; Not implemented yet
         ;; ("C-c n c" . denote-region)
-        ("C-c n N" . denote-type)
-        ("C-c n d" . denote-date)
-        ("C-c n z" . denote-signature)
-        ("C-c n s" . denote-subdirectory)
-        ("C-c n t" . denote-template)
-        ("C-c n l" . denote-link)))
+        ("C-t n N" . denote-type)
+        ("C-t n d" . denote-date)
+        ("C-t n z" . denote-signature)
+        ("C-t n s" . denote-subdirectory)
+        ("C-t n t" . denote-template)
+        ("C-t n l" . denote-link)))
 
 
 (use-package citar-denote

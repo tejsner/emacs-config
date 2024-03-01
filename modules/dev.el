@@ -35,7 +35,7 @@
 ;; Magit: best Git client to ever exist
 (use-package magit
   :ensure t
-  :bind (("C-c v s" . magit-status)))
+  :bind (("C-t v s" . magit-status)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
