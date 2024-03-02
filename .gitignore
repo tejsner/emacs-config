@@ -1,1 +1,14 @@
+# emacs backup files
 *~
+
+# common .emacs.d files
+projects
+history
+bookmarks
+
+# common .emacs.d subdirs
+eshell/
+elpa/
+transient/
+tree-sitter/
+.cache/
