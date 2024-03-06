@@ -8,7 +8,8 @@
 (with-eval-after-load 'package
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 
-(setopt display-time-default-load-average nil) ; this information is useless for most
+;; remove load average information from mode line
+(setopt display-time-default-load-average nil)
 
 ;; Automatically reread from disk if the underlying file changes
 (setopt auto-revert-avoid-polling t)
@@ -41,7 +42,7 @@ If the new path's directories does not exist, create them."
     backupFilePath))
 (setopt make-backup-file-name-function 'bedrock--backup-file-name)
 
-;; dired: kill current buffer when opening new dir
+;; dired: kill current buffer when opening new directory
 (setopt dired-kill-when-opening-new-dired-buffer t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -109,15 +110,15 @@ If the new path's directories does not exist, create them."
 (setopt tab-width 4)
 
 ;; Misc. UI tweaks
-(blink-cursor-mode -1)                                ; Steady cursor
-(pixel-scroll-precision-mode)                         ; Smooth scrolling
+(blink-cursor-mode -1)         ; Steady cursor
+(pixel-scroll-precision-mode)  ; Smooth scrolling
 
 ;; Use common keystrokes by default
 ;; (cua-mode)
 
-;; Display line numbers in programming mode
+;; Display line numbers in programming mode and set minimum width
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(setopt display-line-numbers-width 3)           ; Set a minimum width
+(setopt display-line-numbers-width 3)
 
 ;; Nice line wrapping when working with text
 (add-hook 'text-mode-hook 'visual-line-mode)
@@ -158,6 +159,8 @@ If the new path's directories does not exist, create them."
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; modus-operandi: light theme
+;; modus-vivendi: dark theme
 (use-package emacs
   :config
   (load-theme 'modus-vivendi t))
@@ -168,7 +171,8 @@ If the new path's directories does not exist, create them."
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Use C-t as a leader key, overrides transpose-chars
+;; Use C-t as a leader key, overrides transpose-chars. Entries to this keymap
+;; are set within the use-package declaration of individial packages
 (defvar-keymap timsta-leader-key)
 (keymap-set global-map "C-t" timsta-leader-key)
 
