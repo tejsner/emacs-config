@@ -126,4 +126,4 @@
   "Danish holidays.")
 
 (setq calendar-holidays holiday-denmark-holidays)
-
+(setq org-agenda-include-diary t)
