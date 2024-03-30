@@ -38,8 +38,9 @@
   (require 'emms-volume)
   (setq emms-volume-change-function 'emms-volume-mpd-change)
   ;; remove emms info on modeline
-  (emms-mode-line nil)
-  (emms-playing-time nil)
+  (emms-mode-line-mode -1)
+  (emms-playing-time-enable-display)
+  (emms-playing-time-disable-display)
   ;; automatically connect and update cache
   ;; (emms-player-mpd-connect)
   ;; (emms-cache-set-from-mpd-all)
