@@ -97,3 +97,7 @@
 (use-package pyvenv
   :ensure t)
 
+;; ESS (R, SAS etc)
+(use-package ess
+  :ensure t)
+
