@@ -93,4 +93,8 @@
     :stream t
     :protocol "http"
     :host "localhost:8080"
-    :models '("local-llamafile")))
+    :models '("local-llamafile"))
+  (gptel-make-ollama "Ollama"
+    :stream t
+    :host "localhost:11434"
+    :models '("mistral:latest" "llava:latest" "phi:latest" "tinyllama:latest")))
