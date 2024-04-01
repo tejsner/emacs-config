@@ -87,4 +87,10 @@
   :bind
   (("C-t l" . gptel))
   :custom
-  (gptel-default-mode #'org-mode))
+  (gptel-default-mode #'org-mode)
+  :config
+  (gptel-make-openai "llama-cpp"
+    :stream t
+    :protocol "http"
+    :host "localhost:8080"
+    :models '("local-llamafile")))
