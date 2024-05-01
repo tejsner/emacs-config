@@ -22,6 +22,6 @@
                             ;; (vertical-scroll-bars . nil)
                             ;; (horizontal-scroll-bars . nil)
 
-                            ;; Avoid flashing as theme gets activates
+                            ;; Avoid flashing as theme gets activated
                             (background-color . "#000000")))
 
