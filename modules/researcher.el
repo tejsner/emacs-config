@@ -86,7 +86,8 @@
 (use-package gptel
   :ensure t
   :bind
-  (("C-t l" . gptel))
+  (("C-t l" . gptel)
+   ("C-t RET". gptel-send))
   :custom
   (gptel-default-mode #'org-mode)
   :config
@@ -98,4 +99,9 @@
   (gptel-make-ollama "Ollama"
     :stream t
     :host "localhost:11434"
-    :models '("mistral:latest" "llava:latest" "phi:latest" "tinyllama:latest")))
+    :models '("mistral:latest"
+              "llava:latest"
+              "phi:latest"
+              "tinyllama:latest"
+              "gemma:latest"
+              "codegemma:latest")))
