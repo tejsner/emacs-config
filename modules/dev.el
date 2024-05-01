@@ -1,30 +1,55 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
-;;;   Built-in config for developers
+;;;  General options for dev
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; (use-package emacs
+;;   :hook
+;;   ((prog-mode . electric-pair-mode)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;   Tree-sitter
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ttps://www.masteringemacs.org/article/how-to-get-started-tree-sitter
+
+;; To install all grammars, either:
+;; - run (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
+;; -  use the command `M-x treesit-install-language-grammar' on each language
+
+;; The language sources are versioned in order to avoid problems with new
+;; tree-sitter features not supported by emacs 29 (mid 2023).
+
 (use-package emacs
   :config
-  ;; Treesitter config
-
-  ;; Tell Emacs to prefer the treesitter mode
-  ;; You'll want to run the command `M-x treesit-install-language-grammar' before editing.
   (setq major-mode-remap-alist
         '((yaml-mode . yaml-ts-mode)
           (bash-mode . bash-ts-mode)
           (js2-mode . js-ts-mode)
           (typescript-mode . typescript-ts-mode)
           (json-mode . json-ts-mode)
+          (js-json-mode . json-ts-mode)
           (css-mode . css-ts-mode)
           (python-mode . python-ts-mode)
+          (toml-mode . toml-ts-mode)
           (c-mode . c-ts-mode)
           (c++-mode . c++-ts-mode)
           (c-or-c++-mode . c-or-c++-ts-mode)))
-  ;; :hook
-  ;; Auto parenthesis matching
-  ;; ((prog-mode . electric-pair-mode))
-  )
+  (setq treesit-language-source-alist
+        '((css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
+          (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.20.1"))
+          (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.20.1" "src"))
+          (json . ("https://github.com/tree-sitter/tree-sitter-json" "v0.20.2"))
+          (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.20.4"))
+          (toml "https://github.com/tree-sitter/tree-sitter-toml")
+          (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "tsx/src"))
+          (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src"))
+          (yaml . ("https://github.com/ikatyang/tree-sitter-yaml" "v0.5.0"))
+          (c . ("https://github.com/tree-sitter/tree-sitter-c" "v0.20.4"))
+          (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.20.4")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
