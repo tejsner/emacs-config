@@ -46,3 +46,17 @@
   ;; (emms-cache-set-from-mpd-all)
   :bind
   (("C-t m" . emms-smart-browse)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;   Feeds (elfeed)
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package elfeed
+  :ensure t
+  :custom
+  (elfeed-feeds '("https://api.quantamagazine.org/feed/"))
+  :bind
+  (("C-t w" . elfeed)))
+
