@@ -179,6 +179,11 @@ If the new path's directories does not exist, create them."
 (defvar-keymap timsta-leader-key)
 (keymap-set global-map "C-t" timsta-leader-key)
 
+;; Redefine C-z to other-window, overriding suspend-frame
+(use-package emacs
+  :bind
+  (("C-z" . other-window)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;   Optional extras
