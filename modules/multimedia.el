@@ -49,7 +49,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
-;;;   Feeds (elfeed)
+;;;   Feeds (elfeed) and E-mail (notmuch)
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -60,3 +60,13 @@
   :bind
   (("C-t w" . elfeed)))
 
+(use-package notmuch
+  :demand t
+  :custom
+  (notmuch-search-oldest-first nil)
+  :config
+  (defun timsta--notmuch-inbox ()
+    (interactive)
+    (notmuch-search "folder:INBOX"))
+  :bind
+  (("C-t e" . timsta--notmuch-inbox)))
