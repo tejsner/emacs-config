@@ -23,29 +23,11 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package emms
+;; Requires mpd (with a working configuration) and mpc
+(use-package simple-mpc
   :ensure t
-  :config
-  (require 'emms-setup)
-  (emms-all)
-  ;; use mpd server on localhost
-  (add-to-list 'emms-info-functions 'emms-info-mpd)
-  (add-to-list 'emms-player-list 'emms-player-mpd)
-  (setq emms-player-mpd-server-name "localhost")
-  (setq emms-player-mpd-server-port "6600")
-  (setq emms-player-mpd-music-directory "~/data/music")
-  ;; volme buttons change on mpd server (+/- in playlist view)
-  (require 'emms-volume)
-  (setq emms-volume-change-function 'emms-volume-mpd-change)
-  ;; remove emms info on modeline
-  (emms-mode-line-mode -1)
-  (emms-playing-time-enable-display)
-  (emms-playing-time-disable-display)
-  ;; automatically connect and update cache
-  ;; (emms-player-mpd-connect)
-  ;; (emms-cache-set-from-mpd-all)
   :bind
-  (("C-t m" . emms-smart-browse)))
+  (("C-t m" . simple-mpc)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
