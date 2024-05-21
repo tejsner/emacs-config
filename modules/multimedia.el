@@ -39,12 +39,14 @@
   :ensure t
   :custom
   (elfeed-feeds '(("https://api.quantamagazine.org/feed/" science)
+                  ("https://acoup.blog/feed/")
                   ("https://www.dr.dk/nyheder/service/feeds/indland" news)
                   ("https://www.dr.dk/nyheder/service/feeds/udland" news)
                   ("https://www.dr.dk/nyheder/service/feeds/penge" news)
                   ("https://www.dr.dk/nyheder/service/feeds/politik" news)
                   ("https://karthinks.com/tags/emacs/index.xml" emacs)
                   ("https://protesilaos.com/codelog.xml" emacs)
+                  ("https://www.masteringemacs.org/feed/" emacs)
                   ("https://xkcd.com/atom.xml" comics)
                   ("https://godotengine.org/rss.xml" gamedev)
                   ("https://archlinux.org/feeds/news/" linux)
