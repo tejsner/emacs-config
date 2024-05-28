@@ -86,7 +86,7 @@
 
 (use-package eglot
   :hook
-  (((python-ts-mode c-ts-mode c++-ts-mode c-or-c++-ts-mode) . eglot-ensure))
+  (((python-ts-mode c-ts-mode c++-ts-mode c-or-c++-ts-mode lua-mode) . eglot-ensure))
   
   :custom
   (eglot-send-changes-idle-time 0.1)
@@ -94,10 +94,8 @@
 
   :config
   (fset #'jsonrpc--log-event #'ignore)  ; massive perf boost---don't log every event
-  ;; Sometimes you need to tell Eglot where to find the language server
-  ; (add-to-list 'eglot-server-programs
-  ;              '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
-  )
+  (add-to-list 'eglot-server-programs
+               '(lua-mode . ("lua-language-server"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -126,3 +124,6 @@
 (use-package ess
   :ensure t)
 
+;; Lua
+(use-package lua-mode
+  :ensure t)
