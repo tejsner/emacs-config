@@ -124,6 +124,12 @@
 (use-package ess
   :ensure t)
 
-;; Lua
+;; Lua (install lua-language-server)
 (use-package lua-mode
   :ensure t)
+
+;; love2d (lua game framework) instructions
+;; ----------------------------------------
+;; To get proper completions with eglot create a .luarc.json file in
+;; your working diretoty and set the workspace.library to the path of
+;; the love2d addon found at https://github.com/LuaCATS/love2d
