@@ -75,12 +75,3 @@
     (notmuch-search "folder:INBOX"))
   :bind
   (("C-t e" . timsta--notmuch-inbox)))
-
-(use-package notmuch-indicator
-  :ensure t
-  :custom
-  (notmuch-indicator-args '(( :terms "folder:INBOX and tag:unread"
-                              :label "📥"
-                              :counter-face bold)))
-  :config
-  (notmuch-indicator-mode 1))
