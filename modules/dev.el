@@ -126,7 +126,9 @@
 
 ;; Lua (install lua-language-server)
 (use-package lua-mode
-  :ensure t)
+  :ensure t
+  :custom
+  (lua-indent-nested-block-content-align nil))
 
 ;; love2d (lua game framework) instructions
 ;; ----------------------------------------
