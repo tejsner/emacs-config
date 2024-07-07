@@ -39,17 +39,23 @@
   :ensure t
   :custom
   (elfeed-feeds '(("https://api.quantamagazine.org/feed/" science)
-                  ("https://acoup.blog/feed/")
+                  ("https://acoup.blog/feed/" blog)
+                  ("https://dthompson.us/feed.xml" blog gamedev lisp)
                   ("https://www.dr.dk/nyheder/service/feeds/indland" news)
                   ("https://www.dr.dk/nyheder/service/feeds/udland" news)
                   ("https://www.dr.dk/nyheder/service/feeds/penge" news)
                   ("https://www.dr.dk/nyheder/service/feeds/politik" news)
                   ("https://karthinks.com/tags/emacs/index.xml" emacs)
-                  ("https://protesilaos.com/codelog.xml" emacs)
-                  ("https://www.masteringemacs.org/feed/" emacs)
+                  ("https://protesilaos.com/codelog.xml" blog emacs)
+                  ("https://www.masteringemacs.org/feed/" blog emacs)
                   ("https://xkcd.com/atom.xml" comics)
+                  ("https://www.smbc-comics.com/comic/rss" comics)
                   ("https://godotengine.org/rss.xml" gamedev)
                   ("https://archlinux.org/feeds/news/" linux)
+                  ("https://karpathy.github.io/feed.xml" blog ai)
+                  ("https://api.dr.dk/podcasts/v1/feeds/brinkmanns-briks" podcast)
+                  ("https://technomancy.us/atom.xml" blog gamedev)
+                  ("https://spritely.institute/feed.xml" gamedev)
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCMb0O2CdPBNi-QqPk5T3gsQ" youtube) ; James Hoffmann
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCR2_8uHyWcTSV6iIw6BN4rg" youtube) ; Lance Hedrick
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" youtube) ; Computerphile
@@ -60,7 +66,12 @@
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC1_uAIS3r8Vu6JjXWvastJg" youtube) ; Mathologer
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCoxcjq-8xIDTYp3uz647V5A" youtube) ; Numberphile
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCyNtlmLB73-7gtlBz00XOQQ" youtube) ; Folding Ideas
-                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UC0JB7TSe49lg56u6qH8y_MQ" youtube) ; GDC
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UC0JB7TSe49lg56u6qH8y_MQ" youtube gamedev) ; GDC
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UCXUPKJO5MZQN11PqgIvyuvQ" youtube) ; Andrej Karpathy
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UCRhV1rWIpm_pU19bBm_2RXw" youtube podcast) ; Sean Carroll
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UC7M-Wz4zK8oikt6ATcoTwBA" youtube) ; Freya Holmér
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UCQlJ7XpBtiMLKNSd4RAJmRQ" youtube) ; The Weekly Show with Jon Stewart
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ" youtube) ; LastWeekTonight
                   ))
   :bind
   (("C-t w" . elfeed)))
