@@ -73,6 +73,7 @@
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCQlJ7XpBtiMLKNSd4RAJmRQ" youtube) ; The Weekly Show with Jon Stewart
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ" youtube) ; LastWeekTonight
                   ))
+  (elfeed-search-title-max-width 110)
   :bind
   (("C-t w" . elfeed)))
 
