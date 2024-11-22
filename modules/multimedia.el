@@ -41,10 +41,10 @@
   (elfeed-feeds '(("https://api.quantamagazine.org/feed/" science)
                   ("https://acoup.blog/feed/" blog)
                   ("https://dthompson.us/feed.xml" blog gamedev lisp)
-                  ("https://www.dr.dk/nyheder/service/feeds/indland" news)
-                  ("https://www.dr.dk/nyheder/service/feeds/udland" news)
-                  ("https://www.dr.dk/nyheder/service/feeds/penge" news)
-                  ("https://www.dr.dk/nyheder/service/feeds/politik" news)
+                  ;; ("https://www.dr.dk/nyheder/service/feeds/indland" news)
+                  ;; ("https://www.dr.dk/nyheder/service/feeds/udland" news)
+                  ;; ("https://www.dr.dk/nyheder/service/feeds/penge" news)
+                  ;; ("https://www.dr.dk/nyheder/service/feeds/politik" news)
                   ("https://karthinks.com/tags/emacs/index.xml" emacs)
                   ("https://protesilaos.com/codelog.xml" blog emacs)
                   ("https://www.masteringemacs.org/feed/" blog emacs)
@@ -60,6 +60,7 @@
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCR2_8uHyWcTSV6iIw6BN4rg" youtube) ; Lance Hedrick
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" youtube) ; Computerphile
                   ("https://www.youtube.com/feeds/videos.xml?playlist_id=PLeskMkEaHJYfTMaKwmBWGq4NogX9FLF2J" youtube) ; Daily Show: Jon Stewart
+                  ("https://www.youtube.com/feeds/videos.xml?playlist_id=PLs3acGYgI1-ttQNvLR8BMOx1NkTNxk2cv" youtube) ; Quill18; Factorio - Space Age
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" youtube) ; Veritasium
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw" youtube) ; 3Blue1Brown
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCvBqzzvUBLCs8Y7Axb-jZew" youtube) ; Sixty Symbols
@@ -72,6 +73,7 @@
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC7M-Wz4zK8oikt6ATcoTwBA" youtube) ; Freya Holmér
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCQlJ7XpBtiMLKNSd4RAJmRQ" youtube) ; The Weekly Show with Jon Stewart
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ" youtube) ; LastWeekTonight
+                  ("https://www.youtube.com/feeds/videos.xml?channel_id=UCSju5G2aFaWMqn-_0YBtq5A" youtube) ; Stand-up Maths
                   ))
   (elfeed-search-title-max-width 110)
   :bind
