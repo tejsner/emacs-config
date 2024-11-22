@@ -91,6 +91,7 @@
   :custom
   (eglot-send-changes-idle-time 0.1)
   (eglot-extend-to-xref t)
+  (eldoc-echo-area-use-multiline-p nil)
 
   :config
   (fset #'jsonrpc--log-event #'ignore)  ; massive perf boost---don't log every event
