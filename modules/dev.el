@@ -128,8 +128,18 @@
 ;; Lua (install lua-language-server)
 (use-package lua-mode
   :ensure t
+  :init
+  (unbind-key "C-c C-l" lua-mode-map)
   :custom
-  (lua-indent-nested-block-content-align nil))
+  (lua-indent-level 3)
+  (lua-indent-nested-block-content-align nil)
+  (lua-default-application "luajit")
+  :bind
+  (("C-c C-p" . lua-show-process-buffer)
+   ("C-c C-c" . lua-send-buffer)
+   ("C-c C-l" . lua-send-current-line)
+   ("C-c C-e" . lua-send-defun)
+   ("C-c C-r" . lua-send-region)))
 
 ;; love2d (lua game framework) instructions
 ;; ----------------------------------------
