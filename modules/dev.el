@@ -128,7 +128,7 @@
 ;; Lua (install lua-language-server)
 (use-package lua-mode
   :ensure t
-  :init
+  :config
   (unbind-key "C-c C-l" lua-mode-map)
   :custom
   (lua-indent-level 3)
