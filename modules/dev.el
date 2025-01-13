@@ -96,7 +96,7 @@
   :config
   (fset #'jsonrpc--log-event #'ignore)  ; massive perf boost---don't log every event
   (add-to-list 'eglot-server-programs
-               '(lua-mode . ("lua-language-server"))))
+               '(lua-mode . ("lua-language-server" "--configpath=~/.emacs.d/modules/luals.json"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
