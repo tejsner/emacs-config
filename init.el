@@ -68,21 +68,19 @@ If the new path's directories does not exist, create them."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; For help, see: https://www.masteringemacs.org/article/understanding-minibuffer-completion
+;; Many of these are not active when using other packages for minibuffer and in-buffer completions
 (setopt enable-recursive-minibuffers t)                ; Use the minibuffer whilst in the minibuffer
 (setopt completion-cycle-threshold 1)                  ; TAB cycles candidates
 (setopt completions-detailed t)                        ; Show annotations
-(setopt tab-always-indent 'complete)                   ; When I hit TAB, try to complete, otherwise, indent
-(setopt completion-styles '(basic initials substring)) ; Different styles to match input to candidates
+(setopt tab-always-indent t)                           ; Use ESC TAB for in-buffer completion. Set to 'complete to use TAB for in-buffer completion.
+(setopt completion-styles '(basic initials substring)) ; Different styles to match input to candidates. Overwritten by orderless.
 
 (setopt completion-auto-help 'always)                  ; Open completion always; `lazy' another option
 (setopt completions-max-height 20)                     ; This is arbitrary
 (setopt completions-detailed t)
 (setopt completions-format 'one-column)
 (setopt completions-group t)
-(setopt completion-auto-select 'second-tab)            ; Much more eager
-;(setopt completion-auto-select t)                     ; See `C-h v completion-auto-select' for more possible values
-
-(keymap-set minibuffer-mode-map "TAB" 'minibuffer-complete) ; TAB acts more like how it does in the shell
+(setopt completion-auto-select 'second-tab)            ; Much more eager. See variable help for more options.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
