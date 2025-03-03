@@ -17,11 +17,5 @@
 (setq frame-resize-pixelwise t)
 (tool-bar-mode -1)                      ; All these tools are in the menu-bar anyway
 (setq default-frame-alist '((fullscreen . maximized)
-
-                            ;; Turn off scroll bars
-                            ;; (vertical-scroll-bars . nil)
-                            ;; (horizontal-scroll-bars . nil)
-
-                            ;; Avoid flashing as theme gets activated
                             (background-color . "#000000")))
 
