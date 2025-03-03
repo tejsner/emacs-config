@@ -56,6 +56,8 @@
                   ("https://api.dr.dk/podcasts/v1/feeds/brinkmanns-briks" podcast)
                   ("https://technomancy.us/atom.xml" blog gamedev)
                   ("https://spritely.institute/feed.xml" gamedev)
+                  ("https://terrytao.wordpress.com/feed/" science)
+                  ("https://scottaaronson.blog/?feed=rss2" science)
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCMb0O2CdPBNi-QqPk5T3gsQ" youtube) ; James Hoffmann
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCR2_8uHyWcTSV6iIw6BN4rg" youtube) ; Lance Hedrick
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" youtube) ; Computerphile
