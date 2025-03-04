@@ -53,6 +53,14 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
+;;;   Documentation eldoc
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setopt eldoc-echo-area-use-multiline-p nil)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
 ;;;   Version Control
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -80,30 +88,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
-;;;   Eglot, the built-in LSP client for Emacs
-;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package eglot
-  :hook
-  (((python-ts-mode c-ts-mode c++-ts-mode c-or-c++-ts-mode lua-mode) . eglot-ensure))
-  
-  :custom
-  (eglot-send-changes-idle-time 0.1)
-  (eglot-extend-to-xref t)
-  (eldoc-echo-area-use-multiline-p nil)
-
-  :config
-  (fset #'jsonrpc--log-event #'ignore)  ; massive perf boost---don't log every event
-  (add-to-list 'eglot-server-programs
-               '(lua-mode . ("lua-language-server" "--configpath=~/.emacs.d/modules/luals.json"))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;
 ;;;   Language specific packages
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 ;; lisp (including dialects such as scheme) stuff
 (use-package slime
@@ -125,21 +112,11 @@
 (use-package ess
   :ensure t)
 
-;; Lua (install lua-language-server)
-(use-package lua-mode
-  :ensure t
+(use-package lua-ts-mode
+  :mode ("\\.lua\\'" . lua-ts-mode)
   :custom
-  (lua-indent-level 3)
-  (lua-indent-nested-block-content-align nil)
+  (lua-ts-indent-offset 3)
   :bind
-  (:map lua-mode-map
-   ("C-c C-p" . lua-show-process-buffer)
-   ("C-c C-c" . compile)
-   ("C-c C-e" . lua-send-defun)
-   ("C-c C-r" . lua-send-region)))
-
-;; love2d (lua game framework) instructions
-;; ----------------------------------------
-;; To get proper completions with eglot create a .luarc.json file in
-;; your working diretoty and set the workspace.library to the path of
-;; the love2d addon found at https://github.com/LuaCATS/love2d
+  (:map lua-ts-mode-map
+        ("C-c C-b" . lua-ts-send-buffer)
+        ("C-c C-c" . compile)))
