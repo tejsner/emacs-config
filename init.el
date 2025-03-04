@@ -76,9 +76,9 @@ If the new path's directories does not exist, create them."
 (setopt completion-styles '(basic initials substring)) ; Different styles to match input to candidates. Overwritten by orderless.
 
 (setopt completion-auto-help 'always)                  ; Open completion always; `lazy' another option
-(setopt completions-max-height 20)                     ; This is arbitrary
+(setopt completions-max-height 10)                     ; This is arbitrary
 (setopt completions-detailed t)
-(setopt completions-format 'one-column)
+(setopt completions-format 'horizontal)                ; Appearance of completion. Use 'one-column for list-like completion buffer.
 (setopt completions-group t)
 (setopt completion-auto-select 'second-tab)            ; Much more eager. See variable help for more options.
 
