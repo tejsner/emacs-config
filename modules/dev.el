@@ -28,8 +28,6 @@
   (setq major-mode-remap-alist
         '((yaml-mode . yaml-ts-mode)
           (bash-mode . bash-ts-mode)
-          (js2-mode . js-ts-mode)
-          (typescript-mode . typescript-ts-mode)
           (json-mode . json-ts-mode)
           (js-json-mode . json-ts-mode)
           (css-mode . css-ts-mode)
@@ -45,10 +43,7 @@
           (json . ("https://github.com/tree-sitter/tree-sitter-json" "v0.20.2"))
           (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.20.4"))
           (toml "https://github.com/tree-sitter/tree-sitter-toml")
-          (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "tsx/src"))
-          (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src"))
           (yaml . ("https://github.com/ikatyang/tree-sitter-yaml" "v0.5.0"))
-          (c . ("https://github.com/tree-sitter/tree-sitter-c" "v0.20.4"))
           (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.20.4")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -57,7 +52,6 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setopt eldoc-echo-area-use-multiline-p nil)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -112,6 +106,7 @@
 (use-package ess
   :ensure t)
 
+;; Lua
 (use-package lua-ts-mode
   :mode ("\\.lua\\'" . lua-ts-mode)
   :custom
