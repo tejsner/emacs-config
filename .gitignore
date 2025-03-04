@@ -12,3 +12,4 @@ elpa/
 transient/
 tree-sitter/
 .cache/
+eln-cache/
