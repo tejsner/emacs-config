@@ -48,6 +48,9 @@ If the new path's directories does not exist, create them."
 ;; dired: kill current buffer when opening new directory
 (setopt dired-kill-when-opening-new-dired-buffer t)
 
+;; remove bell
+(setopt ring-bell-function 'ignore)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;   Discovery aids
