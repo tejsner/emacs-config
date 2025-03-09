@@ -7,7 +7,9 @@
 (use-package visual-fill-column
   :ensure t
   :custom
-  (visual-fill-column-center-text t))
+  (visual-fill-column-center-text t)
+  :bind
+  ("C-t z" . visual-fill-column-mode))
 
 (use-package nov
   :ensure t
