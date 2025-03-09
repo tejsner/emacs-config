@@ -23,28 +23,31 @@
 ;; The language sources are versioned in order to avoid problems with new
 ;; tree-sitter features not supported by emacs 29 (mid 2023).
 
-(use-package emacs
-  :config
-  (setq major-mode-remap-alist
-        '((yaml-mode . yaml-ts-mode)
-          (bash-mode . bash-ts-mode)
-          (json-mode . json-ts-mode)
-          (js-json-mode . json-ts-mode)
-          (css-mode . css-ts-mode)
-          (python-mode . python-ts-mode)
-          (toml-mode . toml-ts-mode)
-          (c-mode . c-ts-mode)
-          (c++-mode . c++-ts-mode)
-          (c-or-c++-mode . c-or-c++-ts-mode)))
-  (setq treesit-language-source-alist
-        '((css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
-          (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.20.1"))
-          (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.20.1" "src"))
-          (json . ("https://github.com/tree-sitter/tree-sitter-json" "v0.20.2"))
-          (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.20.4"))
-          (toml "https://github.com/tree-sitter/tree-sitter-toml")
-          (yaml . ("https://github.com/ikatyang/tree-sitter-yaml" "v0.5.0"))
-          (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.20.4")))))
+(setq-local timsta--use-tree-sitter t) ; tree-sitter toggle
+
+(when timsta--use-tree-sitter
+  (use-package emacs
+    :config
+    (setq major-mode-remap-alist
+          '((yaml-mode . yaml-ts-mode)
+            (bash-mode . bash-ts-mode)
+            (json-mode . json-ts-mode)
+            (js-json-mode . json-ts-mode)
+            (css-mode . css-ts-mode)
+            (python-mode . python-ts-mode)
+            (toml-mode . toml-ts-mode)
+            (c-mode . c-ts-mode)
+            (c++-mode . c++-ts-mode)
+            (c-or-c++-mode . c-or-c++-ts-mode)))
+    (setq treesit-language-source-alist
+          '((css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
+            (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.20.1"))
+            (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.20.1" "src"))
+            (json . ("https://github.com/tree-sitter/tree-sitter-json" "v0.20.2"))
+            (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.20.4"))
+            (toml "https://github.com/tree-sitter/tree-sitter-toml")
+            (yaml . ("https://github.com/ikatyang/tree-sitter-yaml" "v0.5.0"))
+            (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.20.4"))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -106,12 +109,23 @@
 (use-package ess
   :ensure t)
 
-;; Lua
-(use-package lua-ts-mode
-  :mode ("\\.lua\\'" . lua-ts-mode)
-  :custom
-  (lua-ts-indent-offset 3)
-  :bind
-  (:map lua-ts-mode-map
-        ("C-c C-b" . lua-ts-send-buffer)
-        ("C-c C-c" . compile)))
+;; Lua (config depends on tree-sitter toggle)
+(if timsta--use-tree-sitter
+  (use-package lua-ts-mode
+    :mode ("\\.lua\\'" . lua-ts-mode)
+    :custom
+    (lua-ts-indent-offset 3)
+    :bind
+    (:map lua-ts-mode-map
+          ("C-c C-l" . lua-ts-send-buffer)
+          ("C-c C-c" . compile)))
+  (use-package lua-mode
+    :ensure t
+    :custom
+    (lua-indent-level 3)
+    :bind
+    (:map lua-mode-map
+          ("C-c C-c" . compile)
+          ("C-c C-e" . lua-send-defun)
+          ("C-c C-r" . lua-send-region))))
+    
