@@ -58,7 +58,6 @@
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCR2_8uHyWcTSV6iIw6BN4rg" youtube) ; Lance Hedrick
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" youtube) ; Computerphile
                   ("https://www.youtube.com/feeds/videos.xml?playlist_id=PLeskMkEaHJYfTMaKwmBWGq4NogX9FLF2J" youtube) ; Daily Show: Jon Stewart
-                  ("https://www.youtube.com/feeds/videos.xml?playlist_id=PLs3acGYgI1-ttQNvLR8BMOx1NkTNxk2cv" youtube) ; Quill18; Factorio - Space Age
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" youtube) ; Veritasium
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw" youtube) ; 3Blue1Brown
                   ("https://www.youtube.com/feeds/videos.xml?channel_id=UCvBqzzvUBLCs8Y7Axb-jZew" youtube) ; Sixty Symbols
