@@ -23,7 +23,7 @@
 ;; The language sources are versioned in order to avoid problems with new
 ;; tree-sitter features not supported by emacs 29 (mid 2023).
 
-(setq-local timsta--use-tree-sitter t) ; tree-sitter toggle
+(setq-local timsta--use-tree-sitter nil) ; tree-sitter toggle
 
 (when timsta--use-tree-sitter
   (use-package emacs
@@ -43,6 +43,7 @@
           '((css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
             (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.20.1"))
             (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.20.1" "src"))
+            (lua . ("https://github.com/tree-sitter-grammars/tree-sitter-lua" "v0.2.0"))
             (json . ("https://github.com/tree-sitter/tree-sitter-json" "v0.20.2"))
             (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.20.4"))
             (toml "https://github.com/tree-sitter/tree-sitter-toml")
@@ -123,6 +124,7 @@
     :ensure t
     :custom
     (lua-indent-level 3)
+    (lua-indent-nested-block-content-align nil)
     :bind
     (:map lua-mode-map
           ("C-c C-c" . compile)

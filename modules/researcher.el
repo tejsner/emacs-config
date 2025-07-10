@@ -91,6 +91,9 @@
   :custom
   (gptel-default-mode #'org-mode)
   :config
+  (gptel-make-gemini "Gemini"
+    :key (gptel-api-key-from-auth-source "generativelanguage.googleapis.com" "apikey")
+    :stream t)
   (gptel-make-openai "llama-cpp"
     :stream t
     :protocol "http"
