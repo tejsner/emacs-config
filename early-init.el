@@ -1,8 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;
-;;;   Basic settings for quick startup and convenience
-;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; early-init.el --- Tim's early-init.el -*- lexical-binding: t; -*-
 
 ;; Startup speed, annoyance suppression
 (setq gc-cons-threshold 10000000)
@@ -13,9 +9,7 @@
 ;; Silence stupid startup message
 (setq inhibit-startup-echo-area-message (user-login-name))
 
-;; Default frame configuration: full screen, good-looking title bar on macOS
-(setq frame-resize-pixelwise t)
-(tool-bar-mode -1)                      ; All these tools are in the menu-bar anyway
-(setq default-frame-alist '((fullscreen . maximized)
-                            (background-color . "#000000")))
+;; Start maximized
+(setq default-frame-alist '((fullscreen . maximized)))
 
+;;; early-init.el ends here
